@@ -1,3 +1,4 @@
+console.log('loading from CDN Darkmode');
 window.addEventListener('load', function () {
   
 //changing body color to black
