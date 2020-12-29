@@ -1,4 +1,4 @@
-window.addEventListener('DOMContentLoaded', function () {
+window.addEventListener('load', function () {
   
 //changing body color to black
 document.body.style.backgroundColor = "black";
@@ -54,13 +54,13 @@ for(var i =0;i<navLinks.length;i++){
 
 //changing navbar hamburger in mobile to white
 
-// var hamburger = document.querySelectorAll("span.line")
-// console.log(hamburger[i]);
+var hamburger = document.querySelectorAll("span.line")
+console.log(hamburger[i]);
 
-// for (var i =0;i<hamburger.length;i++){
-//     console.log(hamburger[i]);
-//     hamburger[i].style.setProperty("background-color", "red", "important");
-// }
+for (var i =0;i<hamburger.length;i++){
+    console.log(hamburger[i]);
+    hamburger[i].style.setProperty("background-color", "white", "important");
+}
 
 
 
