@@ -38,7 +38,7 @@ svgImages[i].setAttribute("style","filter: invert(1);")
 //change SUTD +  logo to inverse
 var sutdLogo = document.querySelectorAll(".logo img.sutd")
 // console.log(sutdLogo)
-sutdLogo[0].src = "/src/logo/sutd_logo_white.png"
+sutdLogo[0].src = "/GradWebsite2020/src/logo/sutd_logo_white.png"
 
 // var asdLogo = document.querySelectorAll(".logo img.asd")
 // asdLogo[0].src = "/src/logo/asd_logo_white.jpg"
