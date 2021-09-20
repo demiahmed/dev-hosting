@@ -1,6 +1,6 @@
-console.log('loading from CDN Darkmode');
+// console.log('loading from CDN Darkmode');
 window.addEventListener('load', function () {
-  
+
 //changing body color to black
 document.body.style.backgroundColor = "black";
 
@@ -8,18 +8,23 @@ document.body.style.backgroundColor = "black";
 
 //changing all div color to white
 
-var divs = document.getElementsByTagName("DIV")
+const divs = document.getElementsByTagName("DIV")
 for(var i=0; i<divs.length;i++){
     // console.log(divs[i])
     divs[i].setAttribute("style", "color:white;")
 }
 // console.log(divs)
 
+//changing navibar background
+
+const navi = document.querySelectorAll('.navibar')[0]
+navi.setAttribute('style','background-color:black;')
+
 
 
 //changing the bottom hyperlink to white
 
-var bottomA = document.querySelectorAll(".bottomlinks a")
+const bottomA = document.querySelectorAll(".bottomlinks a")
 bottomA[0].setAttribute("style","color:white;")
 
 
@@ -27,7 +32,7 @@ bottomA[0].setAttribute("style","color:white;")
 
 //changing all SVG icons to inverse
 
-var svgImages = document.querySelectorAll(".contact a img")
+const svgImages = document.querySelectorAll(".contact a img")
 for(var i =0;i<svgImages.length;i++){
 svgImages[i].setAttribute("style","filter: invert(1);")
 }
@@ -36,17 +41,17 @@ svgImages[i].setAttribute("style","filter: invert(1);")
 
 
 //change SUTD +  logo to inverse
-var sutdLogo = document.querySelectorAll(".logo img.sutd")
+const sutdLogo = document.querySelectorAll(".logo img.sutd")
 // console.log(sutdLogo)
-sutdLogo[0].src = "/GradWebsite2020/src/logo/sutd_logo_white.png"
+sutdLogo[0].src = "../../assets/logo/sutd_logo_white.png"
 
-// var asdLogo = document.querySelectorAll(".logo img.asd")
-// asdLogo[0].src = "/src/logo/asd_logo_white.jpg"
+// const asdLogo = document.querySelectorAll(".logo img.asd")
+// asdLogo[0].src = "/assets/logo/asd_logo_white.jpg"
 
 
 //changing navbar links to inverse
 
-var navLinks = document.querySelectorAll("li a span")
+const navLinks = document.querySelectorAll("li a span")
 for(var i =0;i<navLinks.length;i++){
     navLinks[i].setAttribute('style','color:white;')
 }
@@ -55,11 +60,11 @@ for(var i =0;i<navLinks.length;i++){
 
 //changing navbar hamburger in mobile to white
 
-var hamburger = document.querySelectorAll("span.line")
-console.log(hamburger[i]);
+const hamburger = document.querySelectorAll("span.line")
+// console.log(hamburger[i]);
 
 for (var i =0;i<hamburger.length;i++){
-    console.log(hamburger[i]);
+    // console.log(hamburger[i]);
     hamburger[i].style.setProperty("background-color", "white", "important");
 }
 
@@ -71,7 +76,7 @@ for (var i =0;i<hamburger.length;i++){
 })
 
 function addNewStyle(newStyle) {
-    var styleElement = document.getElementById('styles_js_override');
+    const styleElement = document.getElementById('styles_js_override');
     if (!styleElement) {
         styleElement = document.createElement('style');
         styleElement.type = 'text/css';
