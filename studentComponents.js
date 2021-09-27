@@ -178,6 +178,64 @@ class ImageText extends HTMLElement {
     }
 }
 
+class ImageCarouselText extends HTMLElement {
+    connectedCallback() {
+        let title = this.getAttribute('title')
+        let text = this.getAttribute('text')
+        let attr = this.getAttribute('images')
+        let images = JSON.parse(attr)
+
+        function getSwitcherList(){
+            let switcher = []
+            for(let i=1; i<images.images.length; i++){
+                switcher.push(`<li data-target="#carouselExampleIndicators" data-slide-to="${i}"></li>`)
+            }
+            return switcher.join('')
+        }
+
+        function getSliderList(){
+            let slider = []
+            for(let i=1; i< images.images.length; i++) {
+                slider.push(`<div class="carousel-item">
+                <img class="d-block w-100" src="${images.images[i]}" alt=" Slider Images">
+                </div>`)
+            }
+            return slider.join('')
+        }
+
+        this.innerHTML =         
+        `<div class="twocols" id="mir">
+            <div class="single>
+                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                        ${  getSwitcherList()   }
+        
+                    </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img class="d-block w-100" src="${images.images[0]}" alt="First slide">
+                    </div>
+                    ${ getSliderList() }
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>  
+            <div class="mir_abstract">
+                <h2>${title}</h2>
+                    ${text}
+            </div>
+        </div>
+        `
+    }
+}
+
 class SingleImage extends HTMLElement {
     connectedCallback() {
         let image = this.getAttribute('url')
@@ -201,6 +259,59 @@ class ImageImage extends HTMLElement {
     }
 }
 
+class ImageCarousel extends HTMLElement {
+    connectedCallback() {
+        let attr = this.getAttribute('images')
+        let images = JSON.parse(attr)
+        // console.log(images.images.slice(1));
+
+        function getSwitcherList(){
+            let switcher = []
+            for(let i=1; i<images.images.length; i++){
+                switcher.push(`<li data-target="#carouselExampleIndicators" data-slide-to="${i}"></li>`)
+            }
+            return switcher.join('')
+        }
+
+        function getSliderList(){
+            let slider = []
+            for(let i=1; i< images.images.length; i++) {
+                slider.push(`<div class="carousel-item">
+                <img class="d-block w-100" src="${images.images[i]}" alt=" Slider Images">
+                </div>`)
+            }
+            return slider.join('')
+        }
+
+        this.innerHTML = 
+        `<div class="single">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          ${  getSwitcherList()   }
+        
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="d-block w-100" src="${images.images[0]}" alt="First slide">
+          </div>
+        ${ getSliderList() }
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+      </div>`
+    }
+}
+
+
+
 
 
 
@@ -214,3 +325,5 @@ window.customElements.define('text-image', TextImage)
 window.customElements.define('image-text', ImageText)
 window.customElements.define('single-image', SingleImage)
 window.customElements.define('image-image', ImageImage)
+window.customElements.define('image-carousel', ImageCarousel)
+window.customElements.define('image-carousel-text', ImageCarouselText)

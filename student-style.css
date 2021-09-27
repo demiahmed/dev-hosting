@@ -12,24 +12,12 @@
   font-weight: 100;
 }
 
-@font-face {
-  font-family: "ArialW01-Regular";
-  src: url("//db.onlinewebfonts.com/t/e3b5bb802321fb91fa7db6f3bcc1ffca.eot");
-  src: url("//db.onlinewebfonts.com/t/e3b5bb802321fb91fa7db6f3bcc1ffca.eot?#iefix")
-      format("embedded-opentype"),
-    url("//db.onlinewebfonts.com/t/e3b5bb802321fb91fa7db6f3bcc1ffca.woff2")
-      format("woff2"),
-    url("//db.onlinewebfonts.com/t/e3b5bb802321fb91fa7db6f3bcc1ffca.woff")
-      format("woff"),
-    url("//db.onlinewebfonts.com/t/e3b5bb802321fb91fa7db6f3bcc1ffca.ttf")
-      format("truetype"),
-    url("//db.onlinewebfonts.com/t/e3b5bb802321fb91fa7db6f3bcc1ffca.svg#ArialW01-Regular")
-      format("svg");
-}
+
 
 /* Works on Chrome/Edge/Safari */
 *::-webkit-scrollbar {
   width: 8px;
+  z-index: 999;
 }
 *::-webkit-scrollbar-track {
   background: black;
@@ -211,6 +199,7 @@ img.left {
   margin: 0 auto;
   max-height: 100vh;
   height: 100%;
+  overflow: hidden;
 }
 
 .single img {

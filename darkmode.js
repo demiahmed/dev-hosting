@@ -39,16 +39,6 @@ svgImages[i].setAttribute("style","filter: invert(1);")
 
 
 
-
-//change SUTD +  logo to inverse
-const sutdLogo = document.querySelectorAll(".logo img.sutd")
-// console.log(sutdLogo)
-sutdLogo[0].src = "../../assets/logo/sutd_logo_white.png"
-
-// const asdLogo = document.querySelectorAll(".logo img.asd")
-// asdLogo[0].src = "/assets/logo/asd_logo_white.jpg"
-
-
 //changing navbar links to inverse
 
 const navLinks = document.querySelectorAll("li a span")
