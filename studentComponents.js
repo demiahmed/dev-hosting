@@ -40,8 +40,10 @@ class TitleText extends HTMLElement {
 class ProjectBio extends HTMLElement {
     connectedCallback() {
 
+        let mainTitle = this.getAttribute('main-title')
         let summary = this.getAttribute('summary')
         let aboutme = this.getAttribute('aboutme')
+        let studentTitle = this.getAttribute('student-title')
         let name = this.getAttribute('name')
         let portrait = this.getAttribute('portrait')
         let mentor = this.getAttribute('mentor')
@@ -56,10 +58,10 @@ class ProjectBio extends HTMLElement {
         this.innerHTML = 
         `<div class="twocols invert">
         <div class="abstract">
-            <h2>Summary</h2>
+            <h2>${mainTitle}</h2>
             ${summary}
             <br><br>
-            <h4>About Me</h4>
+            <h4>${studentTitle}</h4>
             ${aboutme}
         </div>
 
