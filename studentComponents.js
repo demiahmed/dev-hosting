@@ -12,7 +12,7 @@ class HeroImage extends HTMLElement {
     connectedCallback() {
         this.innerHTML = 
         `<section class="cover">
-            <div class="mainimage">
+            <div class="mainimage" id="topofpage">
                 <img src="${this.getAttribute('url')}" alt="Hero Image">
             </div>
         </section>`
