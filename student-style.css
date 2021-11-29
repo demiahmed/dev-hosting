@@ -63,6 +63,11 @@ img {
   margin: 0 auto;
 }
 
+.imgcaption {
+  max-width: 75.5vw;
+  margin: 0 auto;
+}
+
 .mainimage {
   text-align: center;
   margin: 0 auto;
